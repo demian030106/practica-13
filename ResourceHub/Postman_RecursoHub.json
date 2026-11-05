@@ -1,0 +1,95 @@
+{
+  "info": {
+    "name": "RecursoHub - Pruebas Postman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar recursos",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/recursos"
+      }
+    },
+    {
+      "name": "Obtener por ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/recursos/1"
+      }
+    },
+    {
+      "name": "Crear recurso",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/api/recursos",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Tutorial de Java\",\n  \"url\": \"https://www.oracle.com/java/\",\n  \"tipo\": \"video\",\n  \"categoria\": \"programacion\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Actualizar completo",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:8080/api/recursos/1",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Tutorial de Java\",\n  \"url\": \"https://www.oracle.com/java/\",\n  \"tipo\": \"video\",\n  \"categoria\": \"programacion\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Actualizar parcial",
+      "request": {
+        "method": "PATCH",
+        "url": "http://localhost:8080/api/recursos/1",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Tutorial actualizado\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Eliminar recurso",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/recursos/1"
+      }
+    }
+  ]
+}
